@@ -23,6 +23,7 @@
 body {
     font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
+    
 }
 
 img {
@@ -1215,9 +1216,7 @@ ul.discription li:first-child,
     z-index: 100;
 }
 
-.no-scroll {
-    overflow: hidden;
-}
+
 
 /* Mobile Menu */
 
@@ -1225,27 +1224,18 @@ ul.discription li:first-child,
     display: none;
     background: #000;
     color: #fff;
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     width: 70%;
     height: 100%;
-    z-index: 1000;
-    transform: translateX(200%);
+    z-index: 200;
+    transform: translateX(110%);
     transition: all 0.6s ease 0.5s;
-    visibility: hidden;
 }
-
-#mobile-menu.active {
+.mobile-menu.active {
     transform: translateX(0);
-    visibility: visible;
 }
-
-.overlay.active {
-    display: block;
-}
-
-
 .mobile-header {
     background: #222222;
     padding: 20px;
@@ -1322,6 +1312,7 @@ ul.discription li:first-child,
     border-radius: 3px;
     height: 40px;
     margin-top: 10px;
+    font-size: 16px;
 }
 
 .btn-group .btn:hover {
@@ -1420,7 +1411,6 @@ ul.discription li:first-child,
         transform: translateX(0);
         max-width: 100%;
         width: 100%;
-
     }
 
     .section-content h3 {
@@ -1513,10 +1503,18 @@ ul.discription li:first-child,
 
 
 @media only screen and (max-width: 769px) {
-    .mobile-menu {
+   
+    .mobile-menu{
         display: block;
     }
+    .overlay.active {
+        display: block;
+        overflow: hidden;
+    }
 
+    .no-scroll {
+    overflow: hidden;
+}
 
     .header {
         background: 0;
